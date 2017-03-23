@@ -43,7 +43,7 @@ app.get('/Aliff', function(req,res){
 app.get('/Brandon', function(req,res){
 	res.render('brandon');
 })
-app.get('/Aarla', function(req,res){
+app.get('/Carla', function(req,res){
 	res.render('carla');
 })
 app.get('/Debbie', function(req,res){
@@ -59,7 +59,7 @@ app.get('/Leo', function(req,res){
 	res.render('leo');
 })
 app.get('/Tiffany', function(req,res){
-	res.render('tiffanny');
+	res.render('tiffany');
 })
 /*END OF ROUTES TO INDIVIDUAL PAGES...*/
 
