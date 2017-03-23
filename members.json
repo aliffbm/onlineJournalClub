@@ -1,0 +1,43 @@
+{
+	"members":[
+		{
+			"name": "Jose",
+			"image": "images/fill-in.png"
+		},
+		{
+			"name": "Adam",
+			"image": "images/fill-in.png"
+		}, 
+		{
+			"name": "Debbie",
+			"image": "images/fill-in.png"
+		}, 
+		{
+			"name": "Leo",
+			"image": "images/fill-in.png"
+		},
+		{
+			"name": "Carla",
+			"image": "images/fill-in.png"
+		},  
+		{
+			"name": "Tiffany",
+			"image": "images/fill-in.png"
+		}, 
+		{
+			"name": "Brandon",
+			"image": "images/fill-in.png"
+		}, 
+		{
+			"name": "Aliff",
+			"image": "images/fill-in.png"
+		}, 
+		{
+			"name": "Kelly",
+			"image": "images/fill-in.png"
+		}
+
+	]
+
+
+}

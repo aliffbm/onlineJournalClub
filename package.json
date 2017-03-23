@@ -1,0 +1,29 @@
+{
+  "name": "quizcreations",
+  "version": "1.0.0",
+  "description": "Create Online Quizzes for Classes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "goofysir04"
+  },
+  "keywords": [
+    "test",
+    "quiz"
+  ],
+
+   "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "3.x",
+    "express-handlebars": "*",
+    "body-parser": "^1.17.1"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "author": "Aliff Macapinlac",
+  "license": "ISC"
+}
