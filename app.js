@@ -12,7 +12,7 @@ var path = require('path');
 app.use(express.static('public'));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars')
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 
 app.use(express.logger('dev'));
