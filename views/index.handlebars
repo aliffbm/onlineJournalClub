@@ -11,25 +11,34 @@
 </head>
 <body>
 
-<div class="container">
-<header>
+<div class="container-fluid">
 
+<div class="container text-center">
 <h1>Welcome to the TFTI, #1201, #702</h1>
+</div>
+<!--This is the JOURNAL CLUB LOGO IMAGE-->
+
+<header class="container-fluid">
+<img class="img-responsive" src="../images/journalClubLogo.jpg"/>
 </header>
+
+<!--End the Journal Club Logo Image-->
 
 
 <section class="row" id="members"/>
 
+<div class="container">
 {{#each members}}
-<div class="col-sm-3 text-center">
+<div class="col-sm-4 text-center">
 <a href="/{{name}}">
 <figure>
-<img width=50 src="{{image}}"/>
+<img width=100 src="{{image}}"/>
 <figcaption>{{name}}</figcaption>
 </figure>
 </a>
 </div>
 {{/each}}
+</div>
 
 </section>
 
@@ -38,7 +47,7 @@
 
 
 
-<section>
+<section id="description">
 <h3>Objective: Teach each other about any relevant or useful information your learned from the previous quarter while learning how to web-develop.</h3>
 
 <p>Use this website as a portfolio item in our Github. It will not only show a project we are working on, but the comradre and team engagement skill we all have by display persistent contribution of our work here</p>

@@ -1,14 +1,21 @@
 
 header {
-	background-image: url('../images/journalClubLogo.jpg');
-	min-height: 300px;
-	color:white;
+
+	background-color: #f5f5dc;
 	padding-top: 2px;
+	margin-top: auto;
+	padding:30px;
 }
 
 header h1{
 	
 	text-align: center;
+}
+header img{
+	display:block;
+	margin:auto;
+	text-align: center;
+	border: 20px solid black;
 }
 
 #members{
@@ -17,4 +24,12 @@ header h1{
 
 #members div {
 	padding: 10px;
+}
+
+#members img{
+	border-radius: 100px;
+}
+
+section#description{
+	text-align: center;
 }
