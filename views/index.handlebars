@@ -117,11 +117,11 @@
 <div class="container">
 
 <h2 class="text-center">Comments / Questions on what things we want to do (code, etc...)</h2>
-<form class="form-group">
+<form class="form-group" action="/postComment" method="post">
 <label>
 Name:
 </label>
-<input class="form-control" type="text" placeholder="Name">
+<input class="form-control" type="text" placeholder="Name" name="name" id="name">
 <label>
 Subject:
 </label>
@@ -130,17 +130,30 @@ Subject:
 <label>
 
 </label>
-<textarea class="form-control" rows="6"></textarea>
+<textarea class="form-control" id="commentString" rows="6" placeholder="Type something in here and click post... It will go onto the comment wall below"></textarea>
 
-<input class="btn btn-success" type="button" name="Post" value="Post" style="float:right; margin: 10px;"/>
+<input class="btn btn-success" id="postCommentBtn" type="button" name="Post" value="Post" style="float:right; margin: 10px;"/>
 </form>
 
 
 
 </div>
-<div class="container well"/>
-	<p>All the post will go here for now...... Suggestions?</p>
+<div class="container well" id="commentWall"/>
+	<p>All the post will go here for now
+	</br> Things to work on for comment wall and Post button...... 
+	</p>
 
+	<ol>
+	<li>Original page (html code) will revert when page refreshes</li>
+	<li>Post button will replace whatever is already on comment wall. Our goal is to get is to add to comment wall, not replace current content</li>
+	</ol>
+
+	<p>
+	.. Suggestions?
+	</p>
+	<p>
+	.. Would also be cool to have the wall be an infinite streaming wall 
+	</p>
 </div>
 
 
@@ -150,6 +163,13 @@ Subject:
 
   	<script src="https://code.jquery.com/jquery.js"></script>
   	<script src="/js/bootstrap.min.js"></script>
-  	<script></script>
+  	<script>
+  		$("#postCommentBtn").click(function(e){
+  			alert("clicked");
+  			// $("commentString").
+
+  			$("#commentWall").text($("#commentString").val());
+  		})
+  	</script>
 </body>
 </html>
