@@ -1,4 +1,13 @@
 
+
+#welcome{
+	background-color: black;
+	color: white;
+	padding: 10px;
+}
+#welcome h1{
+	margin: 0px;
+}
 header {
 
 	background-color: #f5f5dc;
@@ -11,13 +20,20 @@ header h1{
 	
 	text-align: center;
 }
-header img{
+header img#logo{
 	display:block;
 	margin:auto;
 	text-align: center;
 	border: 20px solid black;
 }
-
+header ul li{
+	list-style: none;
+	display: inline;
+}
+header ul li img{
+	padding-left:25px;
+	margin-left:85px;
+}
 #members{
 	padding:10px ;
 }
@@ -28,6 +44,11 @@ header img{
 
 #members img{
 	border-radius: 100px;
+}
+
+#researchAnchors div img{
+	margin:auto;
+	display:block;
 }
 
 section#description{
