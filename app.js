@@ -63,7 +63,30 @@ app.get('/Tiffany', function(req,res){
 })
 /*END OF ROUTES TO INDIVIDUAL PAGES...*/
 
+/*Creating a JSON route for Comment Wall*/
 
+var localData;
+
+
+
+app.get('/commentWall', function(req,res){
+	res.render('partials/commentWall');
+})
+
+
+/*app.post('/postComment', function(req, res){
+	var name = req.body.name;
+	var subject = req.body.subject;
+	var commentStr = req.body.commentString;
+
+	var commentPost = {name: name, subject: subject, comment: commentStr};
+	localData = commentPost;
+	res.render('index', commentPost);
+})
+*/
+// app.get('/', function(req, res){
+// 	res.send(localData);
+// })
 
 app.get('/quiz', function(req,res){
 	res.render('quizPage', cogsQuizData);
