@@ -117,7 +117,7 @@
 <div class="container">
 
 <h2 class="text-center">Comments / Questions on what things we want to do (code, etc...)</h2>
-<form class="form-group form" >
+<form class="form-group form">
 <label>
 Name:
 </label>
@@ -125,14 +125,14 @@ Name:
 <label>
 Subject:
 </label>
-<input class="form-control" type="text" name="subject" placeholder="Subject i.e. Javascript, Python, MondgoDB, Backend, Frontend">
+<input class="form-control" type="text" name="subject" id="subject" placeholder="Subject i.e. Javascript, Python, MondgoDB, Backend, Frontend">
 
 <label>
 
 </label>
-<textarea class="form-control" id="commentString" name="commentString" rows="6" placeholder="Type something in here and click post... It will go onto the comment wall below"></textarea>
+<textarea class="form-control" id="commentString" type="text" name="commentString" rows="6" placeholder="Type something in here and click post... It will go onto the comment wall below"></textarea>
 <div>
-<input class="btn btn-success" id="postCommentBtn"  name="post" value="Post" style="float:right; margin: 10px;"/>
+<input class="btn btn-success" type="submit" id="postCommentBtn"  name="post" value="Post" style="float:right; margin: 10px;"/>
 </div>
 </form>
 
@@ -165,9 +165,18 @@ Subject:
   	<script src="https://code.jquery.com/jquery.js"></script>
   	<script src="/js/bootstrap.min.js"></script>
   	<script src="/js/handlebars-v4.0.5.js"></script>
+<!--  
+{{> commentWall}}  -->
+  	
+<!--  
+  	<script id="showtemplate" type="text/x-handlebars-template">
 
-  	<script>
-  		$("#postCommentBtn").click(function(e){
+
+	
+
+	</script> -->
+<!--   	<script>
+  	/*	$("#postCommentBtn").click(function(e){
   			alert("clicked");
   			// $("commentString").
 
@@ -175,21 +184,21 @@ Subject:
   			// $.get('/postComment', function(data){
 
   			// })
-  		})
+  		})*/
   	</script>
 	
-  	{{> commentWall}}
-  	<script src="/js/myJS.js">
 
-  	</script>
-  	<!-- <script id="render-temp" type="text/x-handlebars-template">
+  	<script id="render-temp" type="text/x-handlebars-template">
 
   		<div>
   		<h1>Does this work??</h1>
   		<h2>{{name}}</h2>
   		</div>
   	</script> -->
+ 	 <script src="/js/myJS.js">
+  
 
+  	</script>
   
   
 </body>

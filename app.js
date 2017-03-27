@@ -6,6 +6,7 @@ var handlebars = require("express-handlebars");
 
 // Requiring JSON Dagta
 var members = require('./members.json');
+var wallComments = require('./wallComments.json');
 
 
 var path = require('path');
@@ -65,16 +66,31 @@ app.get('/Tiffany', function(req,res){
 
 /*Creating a JSON route for Comment Wall*/
 
-var localData;
+var localData=[];
 
 
+app.post('/commentWall', function(req, res){
+	var name = req.body.name;
+	var subject = req.body.subject;
+	var commentString = req.body.commentString;
 
-app.get('/commentWall', function(req,res){
-	res.render('partials/commentWall');
+	localData.push({
+		"name": name,
+		"subject": subject,
+		"commentString": commentString
+	});
+
+	res.json(localData);
+	
+
+
 })
 
+app.get('/commentWall', function(req,res){
+	res.json(localData);
+})
 
-/*app.post('/postComment', function(req, res){
+/*app.post('/postComment', function(req, res ){
 	var name = req.body.name;
 	var subject = req.body.subject;
 	var commentStr = req.body.commentString;
@@ -88,9 +104,9 @@ app.get('/commentWall', function(req,res){
 // 	res.send(localData);
 // })
 
-app.get('/quiz', function(req,res){
+/*app.get('/quiz', function(req,res){
 	res.render('quizPage', cogsQuizData);
-})
+})*/
 app.listen(PORT, function(){
 
 
