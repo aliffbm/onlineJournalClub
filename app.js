@@ -23,7 +23,7 @@ var local_database = 'journalClub';
 var local_database_uri = 'mongodb://localhost/' + local_database;
 var mongodb_uri = "mongodb://heroku_cz3th0w2:t79os0uv230317fjo1g07l9v4p@ds143990.mlab.com:43990/heroku_cz3th0w2";
 
-var database_uri = local_database_uri || mongodb_uri
+var database_uri = local_database_uri || mongodb_uri;
 mongoose.connect(database_uri);
 
 

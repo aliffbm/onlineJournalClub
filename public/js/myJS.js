@@ -12,23 +12,6 @@
 	 function initializePage() {
 
 	
-	 /*	$("#postCommentBtn").click(function(e){
-
-  		var source = $("#render-temp").html();
-  		alert(source);
-  		var template = Handlebars.compile(source);
-
-  		var context = {
-  			name: "OkieDokie"
-  		};
-
-  		var stuff = template(context);
-
-  		$("#commentWall").html(stuff);
-  	});*/
-
-  	//Handlebars.registerPartial("../../views/partial/commentWall", $("#showtemplate").html())
-  	// Handlebars.registerHelper();
 
 
   		$.get('/commentWall', function(data){
@@ -47,35 +30,7 @@
  	})
 
 
- 	// $("#postCommentBtn").click(function(e){
-
- 		
-
-	 //  	$("#name").val($("#name").attr("placeholder"));
-	 //  	$("#subject").val($("#subject").attr("placeholder"));
-	 //  	$("#commentString").val($("#commentString").attr("placeholder"));
-
-
-
-	 //  	//window.location.href='/';
-
-  // 	})
-
-
-  
-
-/*  	var context = {
-  		theName:"AliBaba", 
-  		theBody:"okaythen"
-  	};*/
-
-  	// var source = $("#showtemplate").html();
-  
-
-/*  	Handlebars.registerHelper('cWall', function(){
-
-  	})*/
-
+ 	
 
 
 

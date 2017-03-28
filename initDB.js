@@ -14,7 +14,7 @@ var local_database = 'journalClub';
 var local_database_uri = 'mongodb://localhost/' + local_database;
 var mongodb_uri = "mongodb://heroku_cz3th0w2:t79os0uv230317fjo1g07l9v4p@ds143990.mlab.com:43990/heroku_cz3th0w2";
 
-var database_uri = local_database_uri || mongodb_uri
+var database_uri = local_database_uri || mongodb_uri;
 mongoose.connect(database_uri);
 
 
@@ -39,7 +39,13 @@ function onceClear(err){
 		var json = comments[i];
 		var comment = new commentWallModel.Comment(json);
 
-		comment.save(function(err, comment){
+		comment.save(functionvar local_database = 'journalClub';
+var local_database_uri = 'mongodb://localhost/' + local_database;
+var mongodb_uri = "mongodb://heroku_cz3th0w2:t79os0uv230317fjo1g07l9v4p@ds143990.mlab.com:43990/heroku_cz3th0w2";
+
+var database_uri = local_database_uri || mongodb_uri
+mongoose.connect(database_uri);
+(err, comment){
 			if(err) console.log(err); // <---- need to update to server reponse before live
 
 			to_save_count--;
