@@ -1,18 +1,36 @@
 var express = require('express');
 var app = express();
 var handlebars = require("express-handlebars");
-
-
-
+var path = require('path');
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 // Requiring JSON Dagta
 var members = require('./members.json');
 var wallComments = require('./wallComments.json');
+var commentWallModel = require('./models/wallComments.js');
 
 
-var path = require('path');
+
+/****************************
+*
+*	Set up local data base here
+*	Use Mongood and MongoDB
+*
+*
+****************************/
+
+var local_database = 'journalClub';
+var local_database_uri = 'mongodb://localhost/' + local_database;
+var mongodb_uri = "mongodb://heroku_cz3th0w2:t79os0uv230317fjo1g07l9v4p@ds143990.mlab.com:43990/heroku_cz3th0w2";
+
+var database_uri = local_database_uri || mongodb_uri
+mongoose.connect(database_uri);
+
+
+
 app.use(express.static('public'));
 app.engine('handlebars', handlebars());
-app.set('view engine', 'handlebars')
+app.set('view engine', 'handlebars');
 var PORT = process.env.PORT || 3000;
 
 
@@ -66,7 +84,7 @@ app.get('/Tiffany', function(req,res){
 
 /*Creating a JSON route for Comment Wall*/
 
-var localData=[];
+//var localData=[];
 
 
 app.post('/commentWall', function(req, res){
@@ -74,20 +92,29 @@ app.post('/commentWall', function(req, res){
 	var subject = req.body.subject;
 	var commentString = req.body.commentString;
 
-	localData.push({
-		"name": name,
-		"subject": subject,
-		"commentString": commentString
-	});
+	commentWallModel.Comment
+		.find()
+		.exec(postData);
 
-	res.json(localData);
-	
+		function postData(err, data){
+			if(err) console.log(data);
 
+		var newComment = new commentWallModel.Comment({name:name, subject:subject, commentString: commentString})
+		newComment.save();
+
+		res.redirect("/");
+		}
 
 })
 
 app.get('/commentWall', function(req,res){
-	res.json(localData);
+	commentWallModel.Comment
+		.find()
+		.exec(sendData);
+
+		function sendData(err, data){
+			res.send(data);
+		}
 })
 
 /*app.post('/postComment', function(req, res ){

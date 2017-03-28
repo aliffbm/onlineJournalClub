@@ -20,9 +20,8 @@
     "express": "3.x",
     "express-handlebars": "*",
     "handlebars": "^4.0.6",
-    "babel-plugin-transform-async-to-generator": "^6.16.0",
-    "babel-plugin-transform-es2015-modules-systemjs": "^6.14.0",
-    "node-es-module-loader": "^0.1.1"
+    "mongodb": "*",
+    "mongoose": "*"
   },
   "engines": {
     "node": "0.10.x"

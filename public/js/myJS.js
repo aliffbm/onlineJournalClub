@@ -11,8 +11,7 @@
 	 */
 	 function initializePage() {
 
-	 	
-
+	
 	 /*	$("#postCommentBtn").click(function(e){
 
   		var source = $("#render-temp").html();
@@ -31,20 +30,12 @@
   	//Handlebars.registerPartial("../../views/partial/commentWall", $("#showtemplate").html())
   	// Handlebars.registerHelper();
 
- 	$("#postCommentBtn").click(function(e){
 
-
- 		e.preventDefault();
-
- 		var posterName = $("#name").val();
- 		var subjectLine = $("#subject").val();
- 		var commentString = $("#commentString").val();
-
- 		$.post('/commentWall', {"name": posterName, "subject": subjectLine, "commentString": commentString});
- 		$.get('/commentWall', function(data){
+  		$.get('/commentWall', function(data){
   		var html = 	"{{#each .}}<h1>User: {{name}}</h1>"+
 		"<h2>Subject: {{subject}}</h2>"+
 		"<p>Comment: {{commentString}}</p>{{/each}}";
+  		
 
 	  	var template = Handlebars.compile(html);
 
@@ -53,17 +44,23 @@
 		//console.log(stuff);
 	  	$("#commentWall").html(stuff);
 
-	  	$("#name").val($("#name").attr("placeholder"));
-	  	$("#subject").val($("#subject").attr("placeholder"));
-	  	$("#commentString").val($("#commentString").attr("placeholder"));
-
-
-
-	  	//window.location.href='/';
-
-  	})
-
  	})
+
+
+ 	// $("#postCommentBtn").click(function(e){
+
+ 		
+
+	 //  	$("#name").val($("#name").attr("placeholder"));
+	 //  	$("#subject").val($("#subject").attr("placeholder"));
+	 //  	$("#commentString").val($("#commentString").attr("placeholder"));
+
+
+
+	 //  	//window.location.href='/';
+
+  // 	})
+
 
   
 
