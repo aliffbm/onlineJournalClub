@@ -6,8 +6,9 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 // Requiring JSON Dagta
 var members = require('./members.json');
-var wallComments = require('./wallComments.json');
+//var wallComments = require('./wallComments.json');
 var commentWallModel = require('./models/wallComments.js');
+var membersModel = require('./models/members.js');
 
 
 
@@ -43,8 +44,19 @@ app.use(express.cookieParser());
 
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
+var localDataMembers =[];
 app.get('/', function(req,res){
-	res.render('index', members);
+	membersModel.Member
+		.find()
+		.exec(renderData);
+
+		function renderData(err, data){
+			console.log(data);
+				res.render('index', data);
+
+		}
+
 })
 /*
 * Route to Pages for each member of journal club
@@ -91,6 +103,7 @@ app.post('/commentWall', function(req, res){
 	var name = req.body.name;
 	var subject = req.body.subject;
 	var commentString = req.body.commentString;
+
 
 	commentWallModel.Comment
 		.find()

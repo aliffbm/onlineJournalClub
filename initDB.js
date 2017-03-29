@@ -8,6 +8,7 @@
 
 var mongoose = require('mongoose');
 var commentWallModel = require('./models/wallComments.js');
+var membersModel = require('./models/members.js');
 
 
 var local_database = 'journalClub';
@@ -21,9 +22,40 @@ mongoose.connect(database_uri);
 
 
 /*------------------------------------
-*	This is where implement the initialization
+*	This is where we implement the initialization
 *------------------------------------*/
 var comments = require('./wallComments.json');
+var members = require('./members.json');
+
+
+membersModel.Member 
+	.find()
+	.remove()
+	.exec(afterClear)
+
+
+function afterClear(err){
+	if(err)
+		console.log(err);
+
+	var to_save_count = members.length;
+	for(var i=0; i<members.length;i++){
+		var json = members[i];
+		var member = new membersModel.Member(json);
+
+
+		member.save(function (err, member){
+			if(err)
+				console.log(err);
+
+			to_save_count--;
+			console.log(to_save_count + " left to save");
+			if(to_save_count <=0)
+				console.log("Done initializing members");
+		})
+	}
+}
+
 
 commentWallModel.Comment
 	.find()

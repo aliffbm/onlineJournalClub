@@ -11,46 +11,52 @@
 </head>
 <body>
 
-<div class="container-fluid">
+	<div class="container-fluid">
 
-<div class="container-fluid text-center" id="welcome">
-<h1>Welcome to the TFTI, #1201, #702</h1>
-</div>
+		<div class="container-fluid text-center" id="welcome">
+			<h1>Welcome to the TFTI, #1201, #702</h1>
+		</div>
 
 
-<div class="container" id="researchAnchors"/>
+		<div class="container" id="researchAnchors"/>
 
-<div class="row" style="padding:20px;">
+		<div class="row" style="padding:20px;">
 <!-- <div class="col-sm-2">
 	<img width="100" src="../images/svg/svg1.svg"/>
 </div> -->
 
 <div class="col-sm-3">
-	<figure class="text-center">
-	<img width="100" src="../images/svg/svg2.svg"/>
-	<figcaption>Peer Researchers</figcaption>
-	</figure>
+	<a href="#">
+		<figure class="text-center">
+			<img width="100" src="../images/svg/svg2.svg"/>
+			<figcaption>Peer Researchers</figcaption>
+		</figure>
+	</a>
+</div>
+
+<div class="col-sm-3">
+	<a href="#">
+		<figure class="text-center">
+			<img width="100" src="../images/svg/svg3.svg"/>
+			<figcaption>Literature Reviews</figcaption>
+		</figure>
+	</a>
 </div>
 <div class="col-sm-3">
-	<figure class="text-center">
-	<img width="100" src="../images/svg/svg3.svg"/>
-	<figcaption>Literature Reviews</figcaption>
-	</figure>
-
+	<a href="#">
+		<figure class="text-center">
+			<img width="100" src="../images/svg/svg4.svg"/>
+			<figcaption>Resources</figcaption>
+		</figure>
+	</a>
 </div>
 <div class="col-sm-3">
-	<figure class="text-center">
-	<img width="100" src="../images/svg/svg4.svg"/>
-	<figcaption>Resources</figcaption>
-	</figure>
-
-</div>
-<div class="col-sm-3">
-	<figure class="text-center">
-	<img width="100" src="../images/svg/svg6.svg"/>
-	<figcaption>This Weeks Instructions</figcaption>
-	</figure>
-
+	<a href="#">
+		<figure class="text-center">
+			<img width="100" src="../images/svg/svg6.svg"/>
+			<figcaption>This Weeks Instructions</figcaption>
+		</figure>
+	</a>
 </div>
 </div>
 
@@ -60,7 +66,7 @@
 <!--This is the JOURNAL CLUB LOGO IMAGE-->
 
 <header class="container-fluid">
-<img class="img-responsive" id="logo" src="../images/journalClubLogo.jpg"/>
+	<img class="img-responsive" style="max-height: 500px;" width=700 id="logo" src="../images/journalClubLogo.jpg"/>
 </header>
 
 
@@ -68,22 +74,22 @@
 <!--End the Journal Club Logo Image-->
 
 <div class="text-center">
-<h3>The Scientists</h3>
+	<h3>The Scientists</h3>
 </div>
 <section class="row" id="members"/>
 
 
 <div class="container">
-{{#each members}}
-<div class="col-sm-4 text-center">
-<a href="/{{name}}">
-<figure>
-<img width=100 src="{{image}}"/>
-<figcaption>{{name}}</figcaption>
-</figure>
-</a>
-</div>
-{{/each}}
+	{{#each .}}
+	<div class="col-sm-4 text-center">
+		<a href="/{{name}}">
+			<figure>
+				<img width=100 src="{{image}}"/>
+				<figcaption>{{name}}</figcaption>
+			</figure>
+		</a>
+	</div>
+	{{/each}}
 </div>
 
 </section>
@@ -94,19 +100,19 @@
 
 
 <section id="description" class="container-fluid">
-<h3>~ Objective ~</h3> 
-<p>Teach each other about any relevant or useful information your learned from the previous quarter while learning how to web-develop.</p>
+	<h3>~ Objective ~</h3> 
+	<p>Teach each other about any relevant or useful information your learned from the previous quarter while learning how to web-develop.</p>
 
-<p>Use this website as a portfolio item in our Github. It will not only show a project we are working on, but the comradre and team engagement skill we all have by display persistent contribution of our work here</p>
+	<p>Use this website as a portfolio item in our Github. It will not only show a project we are working on, but the comradre and team engagement skill we all have by display persistent contribution of our work here</p>
 
 
-<h3>~ Express Yourself ~</h3>
-<p>Feel free to style this website however you like. Any framework is fine. Start with HTML, CSS, Javascript, jQuery. We can use other libraries if we get bored and want something funner. We can use MongoDB for our DataBase (later).</p>
+	<h3>~ Express Yourself ~</h3>
+	<p>Feel free to style this website however you like. Any framework is fine. Start with HTML, CSS, Javascript, jQuery. We can use other libraries if we get bored and want something funner. We can use MongoDB for our DataBase (later).</p>
 
-<h3>~ Share and Collaborate ~</h3>
-<p>We can continue to exhaustively iterate. Please be mindful of merges to not overwrite others work. Integration is fine... Will include links to resources for help later.</p>
+	<h3>~ Share and Collaborate ~</h3>
+	<p>We can continue to exhaustively iterate. Please be mindful of merges to not overwrite others work. Integration is fine... Will include links to resources for help later.</p>
 
-<p>Let me know through face book if you are interested in this!!! </p>
+	<p>Let me know through face book if you are interested in this!!! </p>
 
 </section>
 
@@ -116,46 +122,47 @@
 
 <div class="container">
 
-<h2 class="text-center">Comments / Questions on what things we want to do (code, etc...)</h2>
-<form class="form-group form" action='/commentWall' method="POST">
-<label>
-Name:
-</label>
-<input class="form-control" type="text" placeholder="Name" name="name" id="name">
-<label>
-Subject:
-</label>
-<input class="form-control" type="text" name="subject" id="subject" placeholder="Subject i.e. Javascript, Python, MondgoDB, Backend, Frontend">
+	<h2 class="text-center">Comments / Questions on what things we want to do (code, etc...)</h2>
 
-<label>
+	<form class="form-group form" action='/commentWall' method="POST">
+		<label>
+			Name:
+		</label>
+		<input class="form-control" type="text" placeholder="Name" name="name" id="name">
+		<label>
+			Subject:
+		</label>
+		<input class="form-control" type="text" name="subject" id="subject" placeholder="Subject i.e. Javascript, Python, MondgoDB, Backend, Frontend">
 
-</label>
-<textarea class="form-control" id="commentString" type="text" name="commentString" rows="6" placeholder="Type something in here and click post... It will go onto the comment wall below"></textarea>
-<div>
-<input class="btn btn-success" type="submit" id="postCommentBtn"  name="post" value="Post" style="float:right; margin: 10px;"/>
-</div>
-</form>
+		<label>
+
+		</label>
+		<textarea class="form-control" id="commentString" type="text" name="commentString" rows="6" placeholder="Type something in here and click post... It will go onto the comment wall below"></textarea>
+		<div>
+			<input class="btn btn-success" type="submit" id="postCommentBtn"  name="post" value="Post" style="float:right; margin: 10px;"/>
+		</div>
+	</form>
 
 
 
 </div>
 <hr>
 <div class="container well" id="commentWall"/>
-	<p>All the post will go here for now
-	</br> Things to work on for comment wall and Post button...... 
-	</p>
+<p>All the post will go here for now
+</br> Things to work on for comment wall and Post button...... 
+</p>
 
-	<ol>
+<ol>
 	<li>Original page (html code) will revert when page refreshes</li>
 	<li>Post button will replace whatever is already on comment wall. Our goal is to get is to add to comment wall, not replace current content</li>
-	</ol>
+</ol>
 
-	<p>
+<p>
 	.. Suggestions?
-	</p>
-	<p>
+</p>
+<p>
 	.. Would also be cool to have the wall be an infinite streaming wall 
-	</p>
+</p>
 </div>
 
 
@@ -163,19 +170,19 @@ Subject:
 <!-- <input type="button" value="Submit" style="text-align: center;"> -->
 
 
-  	<script src="https://code.jquery.com/jquery.js"></script>
-  	<script src="/js/bootstrap.min.js"></script>
-  	<script src="/js/handlebars-v4.0.5.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/handlebars-v4.0.5.js"></script>
 <!--  
-{{> commentWall}}  -->
-  	
+	{{> commentWall}}  -->
+
 <!--  
   	<script id="showtemplate" type="text/x-handlebars-template">
 
 
 	
 
-	</script> -->
+  	</script> -->
 <!--   	<script>
   	/*	$("#postCommentBtn").click(function(e){
   			alert("clicked");
@@ -196,11 +203,11 @@ Subject:
   		<h2>{{name}}</h2>
   		</div>
   	</script> -->
- 	 <script src="/js/myJS.js">
-  
+  	<script src="/js/myJS.js">
+
 
   	</script>
-  
-  
-</body>
-</html>
+
+
+  </body>
+  </html>

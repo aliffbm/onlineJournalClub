@@ -1,5 +1,4 @@
-{
-	"members":[
+[
 		{
 			"name": "Jose",
 			"image": "images/fill-in.png"
@@ -30,7 +29,7 @@
 		}, 
 		{
 			"name": "Aliff",
-			"image": "images/fill-in.png"
+			"image": "images/aliff/aliff.jpg"
 		}, 
 		{
 			"name": "Kelly",
@@ -40,4 +39,3 @@
 	]
 
 
-}
