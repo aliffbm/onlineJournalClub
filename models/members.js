@@ -1,6 +1,7 @@
 var Mongoose = require('mongoose');
 
 var membersSchema = new Mongoose.Schema({
+	"id": Number,
 	"name": String, 
 	"image": String,
 })

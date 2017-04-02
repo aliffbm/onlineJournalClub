@@ -1,4 +1,7 @@
+body{
 
+
+}
 
 #welcome{
 	background-color: black;
@@ -8,12 +11,19 @@
 #welcome h1{
 	margin: 0px;
 }
+
+div#header{
+	background-color: #000;
+}
 header {
 
-	background-color: #000;
-	padding-top: 2px;
-	margin-top: auto;
-	padding:30px;
+	background-image: url('../images/journalClubLogo.jpg');
+	
+	min-height:960px;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 header h1{
@@ -33,6 +43,8 @@ header ul li{
 header ul li img{
 	padding-left:25px;
 	margin-left:85px;
+	padding-right:25px;
+	margin-right:85px;
 }
 #members{
 	padding:10px ;
@@ -53,10 +65,163 @@ header ul li img{
 
 section#description{
 	text-align: center;
-	background-color: green;
+	background-color: #000;
 	padding: 20px;
 	color: #ffffff;
 }
 #commentWall{
+	background-color: #ccc;
 	
+}
+.rptWireFrame{
+	border: 1px solid black;
+	margin-bottom: 7px;
+
+}
+
+#commentInput{
+	display:none;
+
+}
+
+#post-shift-right #userInfoContext{
+	float:right;
+	text-align: center;
+
+	
+}
+
+#post-shift-left #userInfoContext{
+	float:left;
+}
+
+
+#post-shift-right #userCommentStringContext{
+
+float:right;
+	
+  width: 80%;
+  height: 60px;
+  position: relative;
+  left:0px;
+  right:100px;
+ 
+  border: none;
+  -webkit-border-radius: 11px;
+  border-radius: 11px;
+  font: normal 32px/2 "Abel", Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+/*	border-radius: 40px;
+	border-bottom-right-radius: 0px;	
+	*/
+	
+}
+
+#post-shift-right #userCommentStringContext:before{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+ /* z-index: 0;*/
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 00;
+  border: none;
+  font: normal 16px/normal "Times New Roman", Times, serif;
+  color: rgba(0,0,0,0.9);
+
+        
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #fff;
+  text-shadow: none;
+  -webkit-transform: rotateZ(0deg)  translateX(500px) translateY(0px) skewX(-36deg);
+  transform: rotateZ(10deg)  translateX(507px) translateY(-88px) scaleX(-1) skewX(-36deg);
+  -webkit-clip-path: polygon(0 0, 0 100px, 100px 100px, 10px 20px);
+
+}
+
+@media screen and (min-width: 986px){
+	#post-shift-right #userCommentStringContext:before{
+		transform: rotateZ(10deg)  translateX(682px) translateY(-118px) scaleX(-1) skewX(-36deg);
+	}
+}
+
+@media screen and (min-width: 1196px){
+	#post-shift-right #userCommentStringContext:before{
+		transform: rotateZ(10deg)  translateX(838px) translateY(-148px) scaleX(-1) skewX(-36deg);
+	}
+}
+
+#post-shift-left #userCommentStringContext{
+
+ /* -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;*/
+  z-index: 2;
+  clear:right;
+  width: 80%;
+  height: 60px;
+  /*position: relative;*/
+  left:0px;
+  right:100px;
+
+  border: none;
+  -webkit-border-radius: 11px;
+  border-radius: 11px;
+  font: normal 32px/2 "Abel", Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+
+	float:left;
+/*	border-radius: 40px;
+	border-bottom-left-radius: 0px;	
+*/
+	
+}
+
+#post-shift-left #userCommentStringContext:before{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  /*z-index: 1;*/
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 00;
+  border: none;
+  font: normal 16px/normal "Times New Roman", Times, serif;
+  color: rgba(0,0,0,0.9);
+
+        
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #fff;
+  text-shadow: none;
+  -webkit-transform: rotateZ(29deg)  translateX(-5px) skewX(-36deg);
+  transform: rotateZ(-10deg)  translateX(-5px) translateY(0px) skewX(-36deg);
+  -webkit-clip-path: polygon(0 0, 0 100px, 100px 100px, 10px 20px);
+}
+#post-shift-right img{
+	 -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+
+
 }

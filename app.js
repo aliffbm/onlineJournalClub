@@ -15,7 +15,7 @@ var membersModel = require('./models/members.js');
 /****************************
 *
 *	Set up local data base here
-*	Use Mongood and MongoDB
+*	Use Mongoose and MongoDB
 *
 *
 ****************************/
@@ -46,6 +46,14 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 var localDataMembers =[];
+
+
+
+
+
+
+
+
 app.get('/', function(req,res){
 	membersModel.Member
 		.find()
@@ -58,6 +66,31 @@ app.get('/', function(req,res){
 		}
 
 })
+
+app.get('/members', function(req, res){
+	membersModel.Member
+ 	.find()
+ 	.exec(sendDataOfMembers);
+
+ 	function sendDataOfMembers(err, data){
+ 		if(err) console.log(err);
+
+ 		res.send(data);
+ 	}
+
+
+ })
+
+app.post('/saveImagePost', function(data){
+
+	console.log("posting Image data");
+	console.log(data);
+	commentWallModel.Comment 
+		.find({"name": data.name})
+		.exec(postData);
+
+
+})
 /*
 * Route to Pages for each member of journal club
 * We can refactor this later
@@ -65,9 +98,10 @@ app.get('/', function(req,res){
 * page
 */
 
-app.get('/Adam', function(req,res){
+app.get('/Adam', function(req,res){  
 	res.render('adam');
 })
+
 app.get('/Aliff', function(req,res){
 	res.render('aliff');
 })
@@ -96,7 +130,7 @@ app.get('/Tiffany', function(req,res){
 
 /*Creating a JSON route for Comment Wall*/
 
-//var localData=[];
+// var localData=[];
 
 
 app.post('/commentWall', function(req, res){
@@ -129,6 +163,8 @@ app.get('/commentWall', function(req,res){
 			res.send(data);
 		}
 })
+
+
 
 /*app.post('/postComment', function(req, res ){
 	var name = req.body.name;

@@ -11,64 +11,22 @@
 </head>
 <body>
 
-	<div class="container-fluid">
+<div class="container-fluid">
 
-		<div class="container-fluid text-center" id="welcome">
+<!-- 		<div class="container-fluid text-center" id="welcome">
 			<h1>Welcome to the TFTI, #1201, #702</h1>
-		</div>
+		</div> -->
 
 
-		<div class="container" id="researchAnchors"/>
-
-		<div class="row" style="padding:20px;">
-<!-- <div class="col-sm-2">
-	<img width="100" src="../images/svg/svg1.svg"/>
-</div> -->
-
-<div class="col-sm-3">
-	<a href="#">
-		<figure class="text-center">
-			<img width="100" src="../images/svg/svg2.svg"/>
-			<figcaption>Peer Researchers</figcaption>
-		</figure>
-	</a>
-</div>
-
-<div class="col-sm-3">
-	<a href="#">
-		<figure class="text-center">
-			<img width="100" src="../images/svg/svg3.svg"/>
-			<figcaption>Literature Reviews</figcaption>
-		</figure>
-	</a>
-</div>
-<div class="col-sm-3">
-	<a href="#">
-		<figure class="text-center">
-			<img width="100" src="../images/svg/svg4.svg"/>
-			<figcaption>Resources</figcaption>
-		</figure>
-	</a>
-</div>
-<div class="col-sm-3">
-	<a href="#">
-		<figure class="text-center">
-			<img width="100" src="../images/svg/svg6.svg"/>
-			<figcaption>This Weeks Instructions</figcaption>
-		</figure>
-	</a>
-</div>
-</div>
-
-</div>
+	
 
 
 <!--This is the JOURNAL CLUB LOGO IMAGE-->
-
+<div id="header">
 <header class="container-fluid">
-	<img class="img-responsive" style="max-height: 500px;" width=700 id="logo" src="../images/journalClubLogo.jpg"/>
+<!-- 	<img class="img-responsive" style="max-height: 500px;" width=700 id="logo" src="../images/journalClubLogo.jpg"/> -->
 </header>
-
+</div>
 
 
 <!--End the Journal Club Logo Image-->
@@ -115,12 +73,17 @@
 	<p>Let me know through face book if you are interested in this!!! </p>
 
 </section>
+<section>
 
+<!-- <div class="enjoy-css">Speech Bubble</div>
+<link async href="http://fonts.googleapis.com/css?family=Abel" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+ -->
+</section>
 
-
-
-
-<div class="container">
+<div class="container text-center">
+<input type="button" class="btn" id ="askButton" value="Ask" style="margin-top:10px;"/>
+</div>
+<div class="container" id="commentInput">
 
 	<h2 class="text-center">Comments / Questions on what things we want to do (code, etc...)</h2>
 
@@ -139,15 +102,14 @@
 		</label>
 		<textarea class="form-control" id="commentString" type="text" name="commentString" rows="6" placeholder="Type something in here and click post... It will go onto the comment wall below"></textarea>
 		<div>
-			<input class="btn btn-success" type="submit" id="postCommentBtn"  name="post" value="Post" style="float:right; margin: 10px;"/>
+			<input class="btn" type="submit" id="postCommentBtn"  name="post" value="Post" style="float:right; margin: 10px;"/>
 		</div>
 	</form>
 
-
-
 </div>
+
 <hr>
-<div class="container well" id="commentWall"/>
+<div class="container" id="commentWall"/>
 <p>All the post will go here for now
 </br> Things to work on for comment wall and Post button...... 
 </p>
@@ -167,46 +129,58 @@
 
 
 
-<!-- <input type="button" value="Submit" style="text-align: center;"> -->
+	<div class="container" id="researchAnchors">
+
+		<div class="row" style="padding:20px;">
+<!-- <div class="col-sm-2">
+	<img width="100" src="../images/svg/svg1.svg"/>
+</div> -->
+
+<div class="col-sm-3">
+	<a href="#">
+		<figure class="text-center">
+			<img width="60" src="../images/svg/svg2.svg"/>
+			<figcaption>Literature Reviews</figcaption>
+		</figure>
+	</a>
+</div>
+
+<div class="col-sm-3">
+	<a href="#">
+		<figure class="text-center">
+			<img width="60" src="../images/svg/svg3.svg"/>
+			<figcaption>Research Papers</figcaption>
+		</figure>
+	</a>
+</div>
+<div class="col-sm-3">
+	<a href="#">
+		<figure class="text-center">
+			<img width="60" src="../images/svg/svg4.svg"/>
+			<figcaption>Resources</figcaption>
+		</figure>
+	</a>
+</div>
+<div class="col-sm-3">
+	<a href="#">
+		<figure class="text-center">
+			<img width="60" src="../images/svg/svg6.svg"/>
+			<figcaption>This Weeks Instructions</figcaption>
+		</figure>
+	</a>
+</div>
+</div>
+
+</div>
+
 
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/handlebars-v4.0.5.js"></script>
-<!--  
-	{{> commentWall}}  -->
+<script src="/js/researchPaperTemplate.js"></script>
 
-<!--  
-  	<script id="showtemplate" type="text/x-handlebars-template">
-
-
-	
-
-  	</script> -->
-<!--   	<script>
-  	/*	$("#postCommentBtn").click(function(e){
-  			alert("clicked");
-  			// $("commentString").
-
-  			// $("#commentWall").text($("#commentString").val());
-  			// $.get('/postComment', function(data){
-
-  			// })
-  		})*/
-  	</script>
-	
-
-  	<script id="render-temp" type="text/x-handlebars-template">
-
-  		<div>
-  		<h1>Does this work??</h1>
-  		<h2>{{name}}</h2>
-  		</div>
-  	</script> -->
-  	<script src="/js/myJS.js">
-
-
-  	</script>
+<script src="/js/myJS.js"></script>
 
 
   </body>
