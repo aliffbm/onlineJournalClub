@@ -148,6 +148,7 @@ float:right;
 
 }
 
+
 @media screen and (min-width: 986px){
 	#post-shift-right #userCommentStringContext:before{
 		transform: rotateZ(10deg)  translateX(682px) translateY(-118px) scaleX(-1) skewX(-36deg);
@@ -224,4 +225,17 @@ float:right;
         -ms-filter: "FlipH";
 
 
+}
+
+#aliffsLinks li{
+	list-style:none;
+	display:inline-block;
+	padding:20px;
+
+}
+#aliffsLinks ul{
+	margin: auto;
+	text-align:center;
+	padding-left:0px;
+	
 }

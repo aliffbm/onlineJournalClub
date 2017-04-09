@@ -10,64 +10,92 @@
 	<link href="/css/style.css" rel="stylesheet">
 </head>
 <body style="background-color: #dda">
-<div class="container">
-<a href="/">Home</a>
-<h1 class="text-center">Aliff's Page</h1>
-<img style="margin:auto; display:block; border-radius:100px" width="150" src="images/aliff/aliff.jpg"/>
-<p class="text-center">Hi Everyone! Welcome to my page!</p>
+	<div class="container">
+		<a href="/">Home</a>
+		<h1 class="text-center">Aliff's Page</h1>
+		<img style="margin:auto; display:block; border-radius:100px" width="150" src="images/aliff/aliff.jpg"/>
+		<p class="text-center">Hi Everyone! Welcome to my page!</p>
+
+		<hr>
 
 
+
+		<!-- ADDING LINKS TO MY PAGE HERE!!!-->
+		<div class="nav navbar" id="aliffsLinks"/>
+
+		<ul>
+		<li id="fall16">
+				Fall '16
+			</li>
+			<li id="winter17">
+				Winter '17
+			</li>
+			<li id="spring17">
+				Spring '17
+			</li>
+			<li id="summer17">
+				Summer '17
+			</li>
+		</ul>
+
+
+
+	</div>
+
+	<hr>
+</div>
 <div class="container" id="thisWeeksLearning">
-<p>This last quarter I took a really interesting class on Memory, Attention, and Learning</p>
-<p>This is where I want to talk about my last quarter experience. Ideally, I would like to practice Science Journal format/style of writing</p>
+	<p>This last quarter I took a really interesting class on Memory, Attention, and Learning</p>
+	<p>This is where I want to talk about my last quarter experience. Ideally, I would like to practice Science Journal format/style of writing</p>
 
 
-<div class="container" id="researchPaperTemplate">
+	<div class="container" id="researchPaperTemplate">
+
+	</div>
+
+
+	<div class="container" id="ideas">
+		<h2>Ideas</h2>
+		<p>Question: Can removing authority from the human decision maker while constraining anonymity mediate empathy and collaboration???  </p>
+		<p>Check out the link to the project <a href="https://affiniate.herokuapp.com"> AFFINIATE</a> I am working on.... </p>
+	</div>
+
+	<div class="container" id="researchPaperTemplateTest">
+
+		<div class="col-sm-12 text-center rptWireFrame" id="abstract">
+
+			<h3>Abstract</h3>
+			<p>I'll write something here....
+				<br>
+				something to the like of...
+				<br>
+				<p>Technology has adapted humans to depend on it to communicate, however, there may be a reason to suggest that this adaptation created an obstruction in emotional intelligene. Therefore, instead of fighting a system, why not work with the system to build or "find" what we lost during the adaption and evolution to/with technology</p>
+
+			</p>
+
+		</div>
+		<div class="col-sm-6 rptWireFrame" id="Introduction">
+
+			<h3>Introduction</h3>
+			<p>And I'll write something here....</p>
+
+
+		</div>
+
+		<div class="col-sm-6 rptWireFrame" id="methods">
+			<h3>Methods</h3>
+			<p>Also here</p>
+		</div>
+
+		<div class="col-sm-6 rptWireFrame" id="discussion">
+			<h3>Discussion</h3>
+			<p>And I will alsooOO I'll write something here....</p>
+		</div>
+	</div>
+</div>
 
 </div>
 
-
-<div class="container" id="ideas">
-<h2>Ideas</h2>
-<p>Question: Can removing authority from the human decision maker while constraining anonymity mediate empathy and collaboration???  </p>
-<p>Check out the link to the project <a href="https://affiniate.herokuapp.com"> AFFINIATE</a> I am working on.... </p>
-</div>
-
-<div class="container" id="researchPaperTemplateTest">
-
-<div class="col-sm-12 text-center rptWireFrame" id="abstract">
-
-<h3>Abstract</h3>
-<p>I'll write something here....
-<br>
-something to the like of...
-<br>
-<p>Technology has adapted humans to depend on it to communicate, however, there may be a reason to suggest that this adaptation created an obstruction in emotional intelligene. Therefore, instead of fighting a system, why not work with the system to build or "find" what we lost during the adaption and evolution to/with technology</p>
-
-</p>
-
-</div>
-<div class="col-sm-6 rptWireFrame" id="Introduction">
-
-<h3>Introduction</h3>
-<p>And I'll write something here....</p>
-
-
-</div>
-
-<div class="col-sm-6 rptWireFrame" id="methods">
-<h3>Methods</h3>
-<p>Also here</p>
-</div>
-
-<div class="col-sm-6 rptWireFrame" id="discussion">
-<h3>Discussion</h3>
-<p>And I will alsooOO I'll write something here....</p>
-</div>
-</div>
-</div>
-
-</div>
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
@@ -76,5 +104,24 @@ something to the like of...
 <script src="/js/researchPaperTemplate.js"></script>
 
 <script src="/js/myJS.js"></script>
+
+<script>
+
+$(document).ready(function(e){
+
+var aliffsLinks = $("#aliffsLinks li");
+	console.log(aliffsLinks.find().attr("id"));
+	for(var i=0;i<aliffsLinks.length;i++){
+		var hypeLink = $("aliffsLinks li:nth-child("+i+")").attr("id");
+		console.log($("#aliffsLinks li"));
+		$("#aliffsLinks li:nth-child("+i+")").wrap('<a href="/'+hypeLink+'"></a>');
+
+	}
+
+})
+	
+	
+
+</script>
 </body>
 </html>

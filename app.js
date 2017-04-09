@@ -41,7 +41,8 @@ app.use(express.urlencoded());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser());
-
+//app.use(bodyParser().urlencoded({extended:false}));
+//app.use(bodyParser().json());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -61,7 +62,7 @@ app.get('/', function(req,res){
 
 		function renderData(err, data){
 			console.log(data);
-				res.render('index', data);
+				res.render('index', {members:data});
 
 		}
 
@@ -81,13 +82,27 @@ app.get('/members', function(req, res){
 
  })
 
-app.post('/saveImagePost', function(data){
+app.post('/saveImagePost', function(req, res){
+	var postingMember = req.body.postingMember;
+	var PMImage = req.body.PMImage;
 
 	console.log("posting Image data");
-	console.log(data);
+	//console.log(data);
 	commentWallModel.Comment 
-		.find({"name": data.name})
-		.exec(postData);
+		.find({"name": postingMember}, function(err, data){
+			var theData = data[0];
+
+			console.log("Jose says he can't spell");
+			console.log(JSON.stringify(theData));
+			if(err){
+				console.log(err);
+			}else{
+				theData.image = PMImage;
+				console.log(theData.image);
+				theData.save();
+			}
+		})
+		
 
 
 })

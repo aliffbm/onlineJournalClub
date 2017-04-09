@@ -3,24 +3,28 @@
 		{
 			"id": 0,
 			"name": "Samuel",
+			"image": "images/fill-in.png",
 			"subject": "Oh yessss",
 			"commentString": "the first comment!!!"
 		},
 		{
 			"id": 1,
 			"name": "Adam",
+			"image": "images/fill-in.png",
 			"subject": "Video Games",
 			"commentString": "I want to play more"
 		},
 		{
 			"id": 2,
 			"name": "Mama",
+			"image": "images/fill-in.png",
 			"subject": "Malaysia",
 			"commentString": "I am retired"
 		},
 		{
 			"id": 3,
 			"name": "Jose",
+			"image": "images/fill-in.png",
 			"subject": "Shakes head",
 			"commentString": "Like a tela novella"
 		}

@@ -20,28 +20,34 @@
 	 
 		$('#researchPaperTemplate').html(researchPaperTemplate);
 
-	 	// this is to get data for all the wall post
+	 	//this is to get data for all the wall post
   		$.get('/commentWall', function(data){
 
-  			// a get request inside another get
-  			// $.get('/members', function(membersData){
-		  	// 	console.log(membersData);
-		  	// 	var flag = false;
+  			// match poster to user Image
+  			$.get('/members', function(membersData){
+		  		console.log(membersData);
+		  		var flag = false;
 
-		  	// 	console.log(membersData[1].name.toLowerCase() + " ..Hello.. " + data[0].name.toLowerCase());
-		  	// 	for(var i=0;i<data.length;i++){s
+		  		console.log(membersData[1].name.toLowerCase() + " ..Hello.. " + data[0].name.toLowerCase());
+		  		for(var i=0;i<data.length;i++){
 
 
-		  	// 		for(var j=0;j<membersData.length;j++){
-		  	// 			if(membersData[j].name.toLowerCase() == data[i].name.toLowerCase()){
-		  	// 				$.post('/saveImagePost', membersData[j].image);
-		  	// 			}
-		  	// 		}
-		  	// 	}
-		  	// 	/*for(var i=0;i<membersData.length;i++){
+		  			for(var j=0;j<membersData.length;j++){
+		  				if(data[i].name.toLowerCase() == membersData[j].name.toLowerCase() ){
+		  					console.log( membersData[j].name.toLowerCase());
+		  					console.log( membersData[j].image);
+		  					$.post('/saveImagePost', {postingMember: membersData[j].name, PMImage: membersData[j].image});
+		  					console.log("Post to image was made!!!");
+		  				}
+		  			}
+		  		}
+		  		/*for(var i=0;i<membersData.length;i++){
 	  				
-	  		// 	}*/
-	  		// })
+	  			}*/
+	  		})
+
+  		
+
 
 
 	  	var flag = true;
@@ -72,15 +78,19 @@
 
 	  	var htmlTEST = '{{#commentPostAlternator .}}{{id}}{{name}}{{commentString}}{{/commentPostAlternator}}';
 
-  		var html = flag	? "{{#commentPostAlternator .}}<div class='row' style='margin-left: 10px; margin-right:20px; margin-top:10px; padding-top:10px;'><div class='col-sm-2' id='userInfoContext'><figure><img class='img-responsive' width=100 src='images/svg/commentHead.svg' style='margin-right: 15px;'/> <figcaption> {{name}}</figcaption></figure></div>"+
+  		var html = flag	? "{{#commentPostAlternator .}}<div class='row' style='margin-left: 10px; margin-right:20px; margin-top:10px; padding-top:10px;'><div class='col-sm-2' id='userInfoContext'><figure><img class='img-responsive img-rounded' width=100 src='{{image}}' style='margin-right: 15px;'/> <figcaption> {{name}}</figcaption></figure></div>"+
 		"<div class='well col-sm-10' id='userCommentStringContext' ><p style='background-color:black;'>{{commentString}}</p></div></div>{{/commentPostAlternator}}" : "<h1>Using Ternary</h1>";
   		
 	  	var template = Handlebars.compile(html);
+
+	  	console.log(data);
 
 	  	var stuff = template(data);
 	  	console.log(data);
 		//console.log(stuff);
 	  	$("#commentWall").html(stuff);
+
+	
 
 
 	  	
@@ -91,14 +101,7 @@
  	})
 
 
-
-
-
- 	
-
-
-
-} // this is the end of the initiliazation function 
+ 	}// this is the end of the initiliazation function 
 
 
 
