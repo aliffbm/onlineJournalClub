@@ -61,11 +61,8 @@
 	  		var ret = "";
 	  		for(var i=0;i<context.length;i++){
 	  			if(i % 2 == 0){
-	  				console.log("Context id is Even and id is ");
 	  				ret+='<div class="container" id="post-shift-left">'+options.fn(context[i])+'</div>';
-	  				
 	  			}else{
-	  				console.log("Context id is Odd and id is ");
 	  				ret+='<div class="container" id="post-shift-right">'+options.fn(context[i])+'</div>';
 
 	  			}

@@ -118,7 +118,7 @@ app.get('/Adam', function(req,res){
 })
 
 app.get('/Aliff', function(req,res){
-	res.render('aliff');
+	res.render('aliff/aliff');
 })
 app.get('/Brandon', function(req,res){
 	res.render('brandon');
@@ -140,6 +140,13 @@ app.get('/Leo', function(req,res){
 })
 app.get('/Tiffany', function(req,res){
 	res.render('tiffany');
+})
+
+app.get('/spring17', function(req, res){
+	res.render('aliff/spring17')
+})
+app.get('/cog17', function(req,res){
+	res.render('aliff/cog17')
 })
 /*END OF ROUTES TO INDIVIDUAL PAGES...*/
 

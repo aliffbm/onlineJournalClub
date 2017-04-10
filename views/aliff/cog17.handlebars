@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aliff -Cogs '17</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container text-center">
+
+		<h1 class="text-center">Cognitive Science 17</h1>
+	</div>
+
+
+	<!--The Flip Card Modal-->
+	<div class="modal" id="flipCardModal">
+
+	<!--Flip Card content in Modal-->
+		<div class="container text-center modal-content">
+		<!--X glyph to exit the FlipCard Modal-->
+			<span class="close">&times;</span>
+			
+
+			<div id="HWQuestion"/>
+				<p>What part of the brain controls the left leg?</p>
+			</div>
+		
+
+			<div id="HWResponse">
+			<p>The Right! Duhhhhhh!</p>
+			</div>
+			
+			<div style="position: absolute; bottom:0; right:0; left:0;">
+			<input type="button" id="answerButton" value="Press for Answer"/>
+			</div>
+		</div>
+	</div>
+
+	<div class="container text-center">
+	<input type="button" id="playFlipCard" value="Flip Card"/>
+	</div>
+	<!--END BODY HTML STUFF -->
+
+
+
+
+	<!--SCRIPT LINKING AND STUFF-->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/handlebars-v4.0.5.js"></script>
+
+	<script src="/js/researchPaperTemplate.js"></script>
+
+	<script src="/js/myJS.js"></script>
+
+	<script>
+
+	var answerButtonWasClicked = false;
+		$(document).ready(function(e){
+
+			var HWQuestion = $("#HWQuestion");
+			
+			var dummyData = [{
+				"question": "The Question1",
+				"answer": "The Answer1"
+			}, {"question": "The Question2", "answer": "The Answer2"}];
+
+			console.log(dummyData);
+
+
+
+			$("#playFlipCard").click(function(){
+				$("#flipCardModal").css("display","block");
+			})
+			$("span").click(function(){
+				$("#flipCardModal").css("display","none");
+			})
+
+			$("#answerButton").click(function(){
+				answerButtonWasClicked = true;
+
+				if($("#answerButton").val() == "Press for new Question"){
+					
+					$("#HWResponse").fadeOut(1000);
+
+					setTimeout(function(){
+						$("#HWQuestion").fadeIn(500);	
+					}, 1000)
+					
+					$("#answerButton").val("Press for Answer");
+					answerButtonWasClicked = false;
+
+				}
+
+				if($("#answerButton").val() == "Press for Answer" && answerButtonWasClicked == true){
+					$("#HWQuestion").fadeOut(500);
+					setTimeout(function(){
+						$('#HWResponse').fadeIn(1000);
+					}, 1000)
+					
+					$("#answerButton").val("Press for new Question");
+					
+				}
+
+
+			})
+			
+
+
+			
+		})
+
+
+	</script>
+
+	<!--End OF LINKING SCRIPTS-->
+</body>
+</html>

@@ -112,7 +112,7 @@ $(document).ready(function(e){
 var aliffsLinks = $("#aliffsLinks li");
 	console.log(aliffsLinks.find().attr("id"));
 	for(var i=0;i<aliffsLinks.length;i++){
-		var hypeLink = $("aliffsLinks li:nth-child("+i+")").attr("id");
+		var hypeLink = $("#aliffsLinks li:nth-child("+i+")").attr("id");
 		console.log($("#aliffsLinks li"));
 		$("#aliffsLinks li:nth-child("+i+")").wrap('<a href="/'+hypeLink+'"></a>');
 
