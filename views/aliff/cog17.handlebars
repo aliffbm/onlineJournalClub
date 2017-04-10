@@ -59,20 +59,90 @@
 	<script>
 
 	var answerButtonWasClicked = false;
+	var dummyData = [{
+					"question": "The Division of the Forebrain that ultimately becomes the Thalamus, hypothalamus and the eye",
+					"answer": "Diencephalon"
+				}, 
+				{
+					"question": "The Division of the forebrain that ultimately becomes the Cerebral Cortex, Basal Ganglia, Limbic System", 
+					"answer": "Telencephalaon"
+				},
+				{
+					"question": "Hindbrain structure, controls vital reflexes", 
+					"answer": "Medulla"
+				},
+				{
+					"question": "Hindbrain structure, acts as bridge between Hindbrain and higher centers", 
+					"answer": "Pons"
+				},
+				{
+					"question": "Hindbrain structure, involved primarily with guided, timed movements", 
+					"answer": "Cerebellum"
+				},
+				{
+					"question": "Network of cells moving medially through hind- and mid-brain, involved in arousal", 
+					"answer": "Reticular Formation"
+				},
+				{
+					"question": "Core strip of cells through hind- and mid-brain, involved in sleep", 
+					"answer": "Raphe System"
+				}
+
+			];
 		$(document).ready(function(e){
 
+		
 			var HWQuestion = $("#HWQuestion");
+			var HWResponse = $("#HWResponse");
+
+
+			var randomNumber = 0; 
+			var randomNumberPrev = 0;
+
+			function ChangeHWQuestions(callback){
+					$("#HWResponse").fadeOut(1000);
+					
+					setTimeout(function(){
+						callback();
+						$("#HWQuestion").fadeIn(500);
+
+
+					}, 1000);
+					
+						
+					
+				}
+		
+
+			function setRandomQuestion(){
+
+			 	do{
+					randomNumber=Math.round(Math.random()*6);
+				}while(randomNumber == randomNumberPrev);
+
+
+				HWQuestion.text("Question: " + dummyData[randomNumber].question);
+				HWResponse.text("Answer: " + dummyData[randomNumber].answer);
+
+
+			}
+
+			function answerButtonIsClicked(){
+
+				$("#HWQuestion").fadeOut(500);
+
+				setTimeout(function(){
+					$('#HWResponse').fadeIn(500);
+				}, 1000)
+
+				
+			}
 			
-			var dummyData = [{
-				"question": "The Question1",
-				"answer": "The Answer1"
-			}, {"question": "The Question2", "answer": "The Answer2"}];
-
-			console.log(dummyData);
-
-
-
 			$("#playFlipCard").click(function(){
+
+				HWQuestion.text("Question: " + dummyData[randomNumber].question);
+				HWResponse.text("Answer: " + dummyData[randomNumber].answer);
+
 				$("#flipCardModal").css("display","block");
 			})
 			$("span").click(function(){
@@ -82,30 +152,29 @@
 			$("#answerButton").click(function(){
 				answerButtonWasClicked = true;
 
+				
+			
+
 				if($("#answerButton").val() == "Press for new Question"){
 					
-					$("#HWResponse").fadeOut(1000);
-
-					setTimeout(function(){
-						$("#HWQuestion").fadeIn(500);	
-					}, 1000)
 					
+					ChangeHWQuestions(setRandomQuestion);
 					$("#answerButton").val("Press for Answer");
 					answerButtonWasClicked = false;
 
 				}
 
 				if($("#answerButton").val() == "Press for Answer" && answerButtonWasClicked == true){
-					$("#HWQuestion").fadeOut(500);
-					setTimeout(function(){
-						$('#HWResponse').fadeIn(1000);
-					}, 1000)
+
+					answerButtonIsClicked();
+				
 					
 					$("#answerButton").val("Press for new Question");
 					
 				}
 
 
+				randomNumberPrev = randomNumber;
 			})
 			
 
