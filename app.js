@@ -148,6 +148,12 @@ app.get('/spring17', function(req, res){
 app.get('/cog17', function(req,res){
 	res.render('aliff/cog17')
 })
+app.get('/april11', function(req, res){
+	res.render('aliff/cog17april11notes')
+})
+app.get('/cog10', function(req, res){
+	res.render('aliff/cog10')
+})
 /*END OF ROUTES TO INDIVIDUAL PAGES...*/
 
 /*Creating a JSON route for Comment Wall*/
