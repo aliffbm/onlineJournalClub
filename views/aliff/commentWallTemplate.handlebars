@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comment Wall Template</title>
+		<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/cwStyle.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+	<!--COMMENT WALL-->
+<!--1. Wrapper <==== this is what I will use to size the entire 
+	commentWall System with. I can center this and create a fixed width-->
+	<div id="w">
+
+		<!--Container <== this is where much of the comments system components will live in-->
+		<div id="container">
+		<h1>My comment wall</h1>
+		<!--This part will hold one comment-reply system-->
+		{{#each wallComment}}
+			<ul id="comments">
+				<li class="cmmnt">
+					<div class="avatar"><a href="javascript:void(0);"><img src="{{image}}" width="55" height="55" alt="aliff's pic">
+						</a>
+					</div>
+					<div class="cmmnt-content">
+						<header><a href="javascript:void(0);">{{name}}</a> - <span class="pubdate">posted 6 days ago</span>
+							<p>{{commentString}}</p>
+						</header>
+
+					</div>
+						<!--This is the nested reply system-->
+					<ul class="replies">
+						<li class="cmmnt">
+							<div class="avatar">
+								<a href="javascript:void(0);">
+									<img src="{{image}}" width="55" height="55" alt="aliff's pic">
+								</a>
+							</div>
+							<div class="cmmnt-content">
+								<header><a href="javascript:void(0);">{{name}}</a> - <span class="pubdate">posted 6 days ago</span>
+									<p>{{commentString}}</p>
+								</header>
+
+							</div>
+						</li>
+					</ul>
+				<li>
+			</ul>
+			{{/each}}
+
+
+
+			</div>
+		</div>
+
+			<!--SCRIPT LINKING AND STUFF-->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/handlebars-v4.0.5.js"></script>
+
+	<script src="/js/researchPaperTemplate.js"></script>
+
+	<script src="/js/myJS.js"></script>
+	</body>
+	</html>

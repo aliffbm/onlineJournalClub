@@ -8,6 +8,7 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/style.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -80,7 +81,7 @@
  -->
 </section>
 
-<div class="container text-center">
+<!-- <div class="container text-center">
 <input type="button" class="btn" id ="askButton" value="Ask" style="margin-top:10px;"/>
 </div>
 <div class="container" id="commentInput">
@@ -107,31 +108,13 @@
 	</form>
 
 </div>
-
+ -->
 <hr>
-<div class="container" id="commentWall"/>
-<p>All the post will go here for now
-</br> Things to work on for comment wall and Post button...... 
-</p>
-
-<ol>
-	<li>Original page (html code) will revert when page refreshes</li>
-	<li>Post button will replace whatever is already on comment wall. Our goal is to get is to add to comment wall, not replace current content</li>
-</ol>
-
-<p>
-	.. Suggestions?
-</p>
-<p>
-	.. Would also be cool to have the wall be an infinite streaming wall 
-</p>
-</div>
 
 
+<div class="container" id="researchAnchors">
 
-	<div class="container" id="researchAnchors">
-
-		<div class="row" style="padding:20px;">
+	<div class="row" style="padding:20px;">
 <!-- <div class="col-sm-2">
 	<img width="100" src="../images/svg/svg1.svg"/>
 </div> -->
@@ -170,7 +153,56 @@
 	</a>
 </div>
 </div>
+</div>
 
+<hr>
+<div class="container">
+<div id="disqus_thread"></div>
+</div>
+
+
+<!-- <div class="container" id="commentWall"/>
+<p>All the post will go here for now
+</br> Things to work on for comment wall and Post button...... 
+</p>
+
+<ol>
+	<li>Original page (html code) will revert when page refreshes</li>
+	<li>Post button will replace whatever is already on comment wall. Our goal is to get is to add to comment wall, not replace current content</li>
+</ol>
+
+<p>
+	.. Suggestions?
+</p>
+<p>
+	.. Would also be cool to have the wall be an infinite streaming wall 
+</p>
+</div>
+ -->
+
+
+
+
+
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://online-journal-club.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 
 
@@ -193,6 +225,8 @@
   ga('send', 'pageview');
 
 </script>
+
+<script id="dsq-count-scr" src="//online-journal-club.disqus.com/count.js" async></script>
 
 
   </body>

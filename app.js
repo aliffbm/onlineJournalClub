@@ -10,7 +10,7 @@ var members = require('./members.json');
 var commentWallModel = require('./models/wallComments.js');
 var membersModel = require('./models/members.js');
 
-
+var wallCommentsData = require('./wallComments.json');
 
 /****************************
 *
@@ -153,6 +153,9 @@ app.get('/april11', function(req, res){
 })
 app.get('/cog10', function(req, res){
 	res.render('aliff/cog10')
+})
+app.get('/commentWallTemplate', function(req,res){
+	res.render('aliff/commentWallTemplate', {"wallComment":wallCommentsData})
 })
 /*END OF ROUTES TO INDIVIDUAL PAGES...*/
 
