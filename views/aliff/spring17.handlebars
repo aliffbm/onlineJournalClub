@@ -8,13 +8,25 @@
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/style.css" rel="stylesheet">
 	<link href="/css/spring.css" rel="stylesheet">
+	<script>
+
+		function fadeSpringIn(){
+	 	$("#springH").fadeIn(2000);
+	 	$("#otherSH").fadeIn(4000);
+	 
+	}
+	</script>
 </head>
-<body>
+<body onload="fadeSpringIn();">
 
 <div class="container-fluid" style="background-color: black;">
 <a href="/aliff">Back to Aliff's Home</a>
 
-<div class="container text-center">
+<div class="container" id="springH" style="display: none;">
+<h2 style="text-align: center; color: white;">Welcome to Spring 2017</h2>
+
+</div>
+<div class="container text-center" id="otherSH" style="display: none;">
 <h1 id="springHeader">Click a class to learning what I am learning!</h1>
 </div>
 </div>
@@ -47,10 +59,8 @@ Cognitive Science 10
 </ul>
 </div>
 
-<div class="container" style="">
-<h2 style="text-align: center;">Welcome to Spring 2017</h2>
 
-</div>
+
 
 
 
@@ -61,6 +71,7 @@ Cognitive Science 10
 <script src="/js/researchPaperTemplate.js"></script>
 
 <script src="/js/myJS.js"></script>
+
 
 
 <!--Embedded code generated from google Analytics to track user behavior-->

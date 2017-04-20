@@ -8,9 +8,14 @@
 	/*
 	 * Function that is called when the document is ready.
 	 */
+
+
 	 function initializePage() {
 
 		// This is used by including script tag with src="researchPaperTemplate.js" 
+		 function fadeSpringIn(){
+	 	alert("Hello");
+	 	}
 
 		$('#askButton').click(function(e){
 			e.preventDefault();
