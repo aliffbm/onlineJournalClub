@@ -1,0 +1,22 @@
+
+body{
+	background-color: #110011
+}
+#springHeader{
+	background-color: #6AE368;
+	border-top-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+ul{
+	
+}
+ul li{
+
+	display: inline-block;
+	text-align: center;
+	padding: 1em;
+}
+#listOfClasses{
+	text-align: center;
+}

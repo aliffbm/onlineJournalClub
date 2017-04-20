@@ -67,7 +67,7 @@
 
 	  			}
 	  		}
-
+javascript:void(0);
 	  		return ret;
 	  		
 
@@ -75,8 +75,8 @@
 
 	  	var htmlTEST = '{{#commentPostAlternator .}}{{id}}{{name}}{{commentString}}{{/commentPostAlternator}}';
 
-  		var html = flag	? "{{#commentPostAlternator .}}<div class='row' style='margin-left: 10px; margin-right:20px; margin-top:10px; padding-top:10px;'><div class='col-sm-2' id='userInfoContext'><figure><img class='img-responsive img-rounded' width=100 src='{{image}}' style='margin-right: 15px;'/> <figcaption> {{name}}</figcaption></figure></div>"+
-		"<div class='well col-sm-10' id='userCommentStringContext' ><p style='background-color:black;'>{{commentString}}</p></div></div>{{/commentPostAlternator}}" : "<h1>Using Ternary</h1>";
+  		var html = "{{#commentPostAlternator .}}<div class='row' style='margin-left: 10px; margin-right:20px; margin-top:10px; padding-top:10px;'><div class='col-sm-2' id='userInfoContext'><figure><img class='img-responsive img-rounded' width=100 src='{{image}}' style='margin-right: 15px;'/> <figcaption> {{name}}</figcaption></figure></div>"+
+		"<div class='well col-sm-10' id='userCommentStringContext' ><p style='background-color:black;'>{{commentString}}</p></div></div>{{/commentPostAlternator}}";
   		
 	  	var template = Handlebars.compile(html);
 

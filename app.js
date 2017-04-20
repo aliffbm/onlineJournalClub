@@ -157,6 +157,10 @@ app.get('/cog10', function(req, res){
 app.get('/commentWallTemplate', function(req,res){
 	res.render('aliff/commentWallTemplate', {"wallComment":wallCommentsData})
 })
+
+app.get('/april13', function(req, res){
+	res.render('aliff/april13')
+})
 /*END OF ROUTES TO INDIVIDUAL PAGES...*/
 
 /*Creating a JSON route for Comment Wall*/
